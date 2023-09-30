@@ -1,0 +1,80 @@
+@use "./common/index" as c;
+
+@each $key, $value in c.$textAlign {
+  .text-#{$key} {
+    text-align: #{$value};
+  }
+}
+
+@each $key, $value in c.$flexJustify {
+  .jc-#{$key} {
+    justify-content: #{$value};
+  }
+}
+
+@each $key, $value in c.$flexAlignItem {
+  .al-#{$key} {
+    align-items: #{$value};
+  }
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+@each $key, $value in c.$displays {
+  .d-#{$key} {
+    display: #{$value};
+  }
+}
+
+$props: (
+  "p": "padding",
+  "m": "margin",
+);
+
+@each $key, $value in $props {
+  @for $i from 1 through 500 {
+    .#{$key}t-#{$i} {
+      #{$value}-top: c.$baseSpatial * $i;
+    }
+    .#{$key}b-#{$i} {
+      #{$value}-bottom: c.$baseSpatial * $i;
+    }
+    .#{$key}l-#{$i} {
+      #{$value}-left: c.$baseSpatial * $i;
+    }
+    .#{$key}r-#{$i} {
+      #{$value}-right: c.$baseSpatial * $i;
+    }
+    .#{$key}y-#{$i} {
+      #{$value}-top: c.$baseSpatial * $i;
+      #{$value}-bottom: c.$baseSpatial * $i;
+    }
+    .#{$key}x-#{$i} {
+      #{$value}-left: c.$baseSpatial * $i;
+      #{$value}-right: c.$baseSpatial * $i;
+    }
+    .#{$key}-#{$i} {
+      #{$value}: c.$baseSpatial * $i;
+    }
+  }
+}
+
+@for $i from 1 through 100 {
+  .fs-#{$i} {
+    font-size: c.$baseFontSize * 0.1 * $i;
+  }
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.w-full {
+  width: 100%;
+}
