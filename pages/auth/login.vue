@@ -2,7 +2,7 @@
   <div class="form-wrapper py-32 d-flex jc-center al-center">
     <div class="form-value">
       <form action="#" @submit.prevent>
-        <h2 class="form-heading text-center">Login</h2>
+        <h2 class="form-heading text-center">Login EC2</h2>
         <div class="field my-30">
           <ion-icon name="mail-outline"></ion-icon>
           <input
