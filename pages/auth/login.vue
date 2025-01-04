@@ -71,6 +71,13 @@ export default {
       password: "authen.formLogin.password",
     }),
   },
+  mounted() {
+    this.$message({
+      message: "This website is built from EC2 and hosted on S3.",
+      type: "success",
+      duration: 3500,
+    });
+  },
   methods: {
     handleShowPassword() {
       this.showPassword = !this.showPassword;
