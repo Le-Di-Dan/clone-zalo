@@ -1,10 +1,8 @@
 name: Deploy to develop
 on:
-  push: &deploy_branches
+  push:
     branches:
       - develop
-  pull_request:
-    <<: *deploy_branches
 jobs:
   build:
     runs-on: node:18
