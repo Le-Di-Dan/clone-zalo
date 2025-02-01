@@ -1,0 +1,22 @@
+name: Deploy to develop
+on:
+  push: &deploy_branches
+    branches:
+      - develop
+  pull_request:
+    <<: *deploy_branches
+jobs:
+  build:
+    runs-on: node:18
+    steps:
+      - name: Pull Code
+        uses: actions/checkout@v3
+      - name: Setup Environment
+        run: |
+          echo "${{ env.AWS_ACCESS_KEY_ID }}"
+          echo "${{ env.AWS_SECRET_ACCESS_KEY }}"
+          echo "${{ env.ENV_DEVELOP }}"
+      - name: Build artifacts
+        run: |
+          yarn install
+          yarn generate
