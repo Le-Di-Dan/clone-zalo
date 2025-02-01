@@ -12,6 +12,7 @@ jobs:
       - name: Setup Environment
         run: |
           echo "${{ toJSON(github.env) }}"
+          cat "${{ toJSON(github.env) }}"
       - name: Build artifacts
         run: |
           yarn install
