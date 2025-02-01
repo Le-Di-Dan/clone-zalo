@@ -5,7 +5,7 @@ on:
       - develop
 jobs:
   build:
-    runs-on: node:18
+    runs-on: ubuntu-22.04
     steps:
       - name: Pull Code
         uses: actions/checkout@v3
