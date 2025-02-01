@@ -2,7 +2,7 @@
   <div class="form-wrapper py-32 d-flex jc-center al-center">
     <div class="form-value">
       <form action="#" @submit.prevent>
-        <h2 class="form-heading text-center">Login</h2>
+        <h2 class="form-heading text-center">Login EC2</h2>
         <div class="field my-30">
           <ion-icon name="mail-outline"></ion-icon>
           <input
@@ -70,6 +70,13 @@ export default {
       user_email: "authen.formLogin.user_email",
       password: "authen.formLogin.password",
     }),
+  },
+  mounted() {
+    this.$message({
+      message: "This website is built from EC2 and hosted on S3.",
+      type: "success",
+      duration: 3500,
+    });
   },
   methods: {
     handleShowPassword() {

@@ -49,6 +49,7 @@ export default {
     // https://go.nuxtjs.dev/axios
     "@nuxtjs/axios",
     "@nuxtjs/auth-next",
+    "@nuxtjs/i18n",
   ],
   publicRuntimeConfig: {
     axios: {
@@ -97,6 +98,22 @@ export default {
     },
   },
 
+  i18n: {
+    locales: ["en", "es"],
+    defaultLocale: "en",
+    vueI18n: {
+      fallbackLocale: "en",
+      messages: {
+        en: {
+          greeting: "Hello world!aaaaa",
+        },
+        es: {
+          greeting: "¡Hola mundo!",
+        },
+      },
+    },
+  },
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     transpile: [/^element-ui/],
@@ -104,7 +121,7 @@ export default {
   router: {
     base: "/",
     trailingSlash: true,
-    middleware: ["auth", "authen"],
+    middleware: ["auth" /* "authen" */],
   },
   loading: "~/components/loading.vue",
 };
