@@ -11,7 +11,7 @@ jobs:
         uses: actions/checkout@v3
       - name: Setup Environment
         run: |
-          echo "${{ github }}"
+          echo "${{ toJSON(github) }}"
       - name: Build artifacts
         run: |
           yarn install
