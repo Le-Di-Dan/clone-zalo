@@ -21,6 +21,7 @@ pipeline {
       }
       steps {
         sh '''
+        echo 'DEPLOY'
         ls -la
         '''
       }
