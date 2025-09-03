@@ -12,6 +12,7 @@ pipeline {
         yarn --version
         yarn install
         yarn generate
+        ls -la
         '''
       }
     }
