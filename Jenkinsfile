@@ -9,7 +9,19 @@ pipeline {
       }
       steps {
         sh '''
-        echo "Hello World!!!!2"
+        yarn --version
+        yarn install
+        yarn generate
+        '''
+      }
+    }
+    stage("Deploy") {
+      agent {
+        reuseNode true
+      }
+      steps {
+        sh '''
+        ls -la
         '''
       }
     }
